@@ -12,7 +12,7 @@ module Ruboty
 
       def open_uri(message)
         msg = OpenURI.open_uri(message.match_data[1]).read rescue nil
-        message.reply(msg[0..1000]) if msg
+        message.reply(msg.encode("UTF-8")[0..1000]) if msg
       end
     end
   end
